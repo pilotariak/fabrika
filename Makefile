@@ -18,7 +18,6 @@ MAKE_COLOR=\033[33;01m%-20s\033[0m
 
 .DEFAULT_GOAL := help
 
-# Define common messages
 OK=[🟢]
 KO=[🔴]
 WARN=[🟠]
