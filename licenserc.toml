@@ -1,0 +1,10 @@
+# SPDX-FileCopyrightText: Copyright (C) Nicolas Lamirault <nicolas.lamirault@gmail.com>
+# SPDX-License-Identifier: Apache-2.0
+
+[header]
+path = "hack/header.txt"
+
+[files]
+includes = ["*.yml", "*.yaml", "*.toml", "*.sh", "Makefile"]
+
+excludes = ["hack/header.txt", "*.json", "vendor/*", "node_modules/*", "target/*", ".git/*"]
