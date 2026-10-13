@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+title: fabrika
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Nicolas
+    family-names: Lamirault
+    email: nicolas.lamirault@gmail.com
+abstract: >-
+  Project world for the Pilotariak organization: a context pack that helps a
+  coding agent work across frontis, kancha, azkena, xilo, plaza, website,
+  decisions and infrastructure, instead of relearning each repository from
+  scratch.
+keywords:
+  - pilotariak
+  - agent-context
+  - openrig
+license: Apache-2.0
+repository-code: https://github.com/Pilotariak/fabrika
+url: https://github.com/Pilotariak/fabrika
