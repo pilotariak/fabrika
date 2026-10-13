@@ -28,29 +28,34 @@ atoms:
   situations: [fresh, post-compaction]
   order: 10
   priority: core
+  taxonomy: world
 - id: contribution-loop
   address: workflow/contributing-with-agents.md
   situations: [fresh]
   order: 20
   requires: [what-pilotariak-is-for]
   priority: core
+  taxonomy: world
 - id: agentic-automation
   address: workflow/agentic-automation.md
   situations: [fresh]
   order: 25
   requires: [contribution-loop]
   priority: recommended
+  taxonomy: world
 - id: proving-a-change
   address: craft/proving-a-change.md
   situations: [fresh]
   order: 30
   requires: [what-pilotariak-is-for]
   priority: recommended
+  taxonomy: world
 - id: tells-of-a-wrong-claim
   address: craft/tells-of-a-wrong-claim.md
   situations: [fresh, post-compaction]
   order: 40
   priority: recommended
+  taxonomy: world
 profiles:
 - id: reviewer
   situations: [fresh]
