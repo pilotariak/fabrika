@@ -29,6 +29,7 @@ atoms:
   order: 10
   priority: core
   taxonomy: world
+  purpose: width
 - id: contribution-loop
   address: workflow/contributing-with-agents.md
   situations: [fresh]
@@ -36,6 +37,7 @@ atoms:
   requires: [what-pilotariak-is-for]
   priority: core
   taxonomy: world
+  purpose: depth
 - id: agentic-automation
   address: workflow/agentic-automation.md
   situations: [fresh]
@@ -43,6 +45,7 @@ atoms:
   requires: [contribution-loop]
   priority: recommended
   taxonomy: world
+  purpose: depth
 - id: proving-a-change
   address: craft/proving-a-change.md
   situations: [fresh]
@@ -50,15 +53,18 @@ atoms:
   requires: [what-pilotariak-is-for]
   priority: recommended
   taxonomy: world
+  purpose: depth
 - id: tells-of-a-wrong-claim
   address: craft/tells-of-a-wrong-claim.md
   situations: [fresh, post-compaction]
   order: 40
   priority: recommended
   taxonomy: world
+  purpose: depth
 profiles:
 - id: reviewer
   situations: [fresh]
+  runtimes: [claude, codex]
   phases:
   - id: purpose
     atoms: [what-pilotariak-is-for]
