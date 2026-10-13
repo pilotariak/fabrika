@@ -3,6 +3,7 @@
 
 name: fabrika
 version: "0.1.0"
+taxonomy: world
 purpose: >-
   How Pilotariak projects fit together, and how a change moves from idea to merged pull request across the org: frontis, kancha, azkena, xilo, plaza, website, decisions, infrastructure. Points at each repository's own AGENTS.md and CI instead of copying them.
 files:
