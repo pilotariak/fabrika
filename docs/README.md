@@ -1,0 +1,39 @@
+# fabrika documentation
+
+fabrika is the [Scion](https://github.com/GoogleCloudPlatform/scion) setup
+for the Pilotariak organization: agent templates (`lead`, `builder`,
+`code-reviewer`, `qa`) and the `pilotariak-context` skill that carries org
+facts no single repo's own `AGENTS.md` states. This documentation is
+organized following the [Diátaxis framework](https://diataxis.fr/), which
+structures content by what you're trying to do, not by what exists in the
+repo.
+
+## Where to start
+
+| I want to...                                   | Go to                                         |
+| ------------------------------------------------ | ------------------------------------------------ |
+| Run my first agent against a Pilotariak repo    | [Tutorials](tutorials/)                       |
+| Add a new role template                         | [How-to Guides](how-to/)                      |
+| Look up a template's or skill's exact fields    | [Reference](reference/)                       |
+| Understand why Scion, and why this delegation model | [Explanation](explanation/)               |
+
+## Tutorials
+
+- [Run your first agent with fabrika](tutorials/getting-started.md)
+
+## How-to Guides
+
+- [Add a new role template](how-to/add-a-role-template.md)
+
+## Reference
+
+- [Reference index](reference/README.md) — points at `skills/` and
+  `.scion/templates/`, the actual source, instead of duplicating it
+
+## Explanation
+
+- [Why Scion, why this delegation model](explanation/why-scion.md)
+
+---
+
+_Documentation structured with [Diátaxis](https://diataxis.fr/)_
