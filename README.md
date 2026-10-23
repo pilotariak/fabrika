@@ -3,74 +3,72 @@
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/Pilotariak/fabrika/blob/main/LICENSE)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/Pilotariak/fabrika/badge)](https://scorecard.dev/viewer/?uri=github.com/Pilotariak/fabrika)
 
-A context pack that helps a coding agent work across the **Pilotariak**
-organization — `frontis`, `kancha`, `azkena`, `xilo`, `plaza`, `website`,
-`decisions`, `infrastructure` — instead of relearning each repository's
-conventions from scratch every session. Short on purpose, points at each
-repo's own `AGENTS.md`/CI instead of copying them, and expected to drift —
-disagreements with a repo's actual source are the repo's to win.
+fabrika is the [Scion](https://github.com/GoogleCloudPlatform/scion) setup
+for the **Pilotariak** organization — `frontis`, `kancha`, `azkena`, `xilo`,
+`plaza`, `website`, `decisions`, `infrastructure`. It holds the agent
+templates and the shared org-context skill, so an agent working on any of
+those repos doesn't relearn "what is this org, how do changes get made here"
+every session. Short on purpose, points at each repo's own `AGENTS.md`/CI
+instead of copying them, and expected to drift — disagreements with a repo's
+actual source are the repo's to win.
 
 ## Who it's for
 
-- Anyone (human or agent) touching more than one Pilotariak repo, where the
-  friction is re-explaining "what is this org, how do changes get made here"
-  every time.
-- Works standalone: every file here is plain Markdown, readable straight from
-  this repository by any agent or any human. No installer required.
+Anyone running Scion agents against more than one Pilotariak repo.
 
 ## What's inside
 
-| File                                   | Covers                                                                  |
-| -------------------------------------- | ----------------------------------------------------------------------- |
-| `identity/what-pilotariak-is-for.md`   | What Pilotariak is, the repo map, how a change is judged org-wide       |
-| `workflow/contributing-with-agents.md` | The loop: sign-off, conventional commits, hooks, review, release-please |
-| `workflow/agentic-automation.md`       | The `gh aw`-based agent CI piloted in `frontis`, and how to extend it   |
-| `craft/proving-a-change.md`            | Per-repo commands that actually prove a change works                    |
-| `craft/tells-of-a-wrong-claim.md`      | Moments you're about to overstate something, and the cheapest check     |
-| `manifest.yaml`                        | The pack manifest                                                       |
+| Path                              | Covers                                                                                                           |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `skills/pilotariak-context/`      | The org-wide skill: repo map, DCO sign-off rule, per-repo prove-it commands, generated-file source-of-truth rule |
+| `.scion/templates/lead/`          | Scopes a goal, delegates to the builder, keeps the PR description true                                           |
+| `.scion/templates/builder/`       | Makes the change, proves it, hands off to review and QA                                                          |
+| `.scion/templates/code-reviewer/` | Independent second pass against the repo's own maps and the actual code                                          |
+| `.scion/templates/qa/`            | Runs the checks the change calls for, reports what each one proved                                               |
 
-## Use it directly
+## Use it
 
-Point an agent at this repo, or hand it a specific file:
-
-```text
-Read https://github.com/Pilotariak/fabrika before working on <repo>.
-```
-
-## Use it with OpenRig
-
-If the agents working across these repos run as an
-[OpenRig](https://github.com/mvschwarz/openrig) rig, install this as a context
-pack once per machine:
+No per-repo template install — any Scion agent can run straight off this
+repo by `gh://` URI. The machine still needs the normal Scion prerequisites
+first: `scion server start` once, then `scion init` inside the target repo,
+harness auth for whichever harness the template defaults to (`codex` for
+lead/code-reviewer, `claude` for builder/qa), and a git identity available
+inside the container — the templates stop and ask rather than guessing one.
 
 ```bash
-rig context add --git https://github.com/Pilotariak/fabrika.git
-rig context list
+cd kancha   # or frontis, azkena, xilo, plaza, website
+scion start lead "<your goal>" \
+  --type gh://Pilotariak/fabrika/.scion/templates/lead
 ```
 
-Load it:
+The target repo is linked to your local Hub on first use and each agent gets
+its own git worktree by default — worktrees of the same repo share `.git`,
+which is what lets the reviewer and QA see the builder's branch without
+anything being pushed. The lead creates the builder, and the builder reports
+back to the lead rather than spawning review/QA itself — see each template's
+own `agents.md` for the exact handoff and why.
 
-| When                                     | Command                                                            |
-| ---------------------------------------- | ------------------------------------------------------------------ |
-| Starting work on a Pilotariak repo       | `rig context profile fabrika --situation fresh`                    |
-| Reviewing a pull request                 | `rig context profile fabrika --situation fresh --profile reviewer` |
-| After a compaction, `/clear`, or restart | `rig context profile fabrika --situation post-compaction`          |
-| One file                                 | `rig context get fabrika/craft/proving-a-change.md`                |
-| Everything                               | `rig context get fabrika`                                          |
-
-Check for and take updates:
+If `gh://` latency on every start becomes a problem, sync the templates to
+your Hub once instead, and reference them by bare name:
 
 ```bash
-rig context source inspect fabrika
-rig context source update fabrika
+cd fabrika && scion templates sync --all
+# elsewhere: scion start lead "<your goal>" --type lead
 ```
 
-## Rig catalog
+A synced copy needs a re-sync (`scion templates sync --all`) after every
+edit here; resolving a template straight by `gh://` URI is expected to pick
+up edits on the next start, but that path is also the least exercised part
+of this setup — see Status below.
 
-[`pilotariak-dev`](rigs/pilotariak-dev/README.md) is a four-seat OpenRig team
-(lead, builder, code-reviewer, QA) for Pilotariak repos. It loads this pack at
-seat startup and is deliberately lean — no borrowed skill tree, see its own
-README for the tradeoff.
+## Status
+
+Untested end to end — the `gh://Pilotariak/fabrika/...` URIs these templates
+and this README use only resolve once this lands on `main`, and running them
+for the first time is the actual test. The two external skills
+(`gh://scion-frontiers/agent-team/software-engineering-process` and
+`.../code-review`) are referenced unpinned, so they can change out from under
+these templates; pin them to a commit or tag if that becomes a problem.
 
 ## Contributing
 

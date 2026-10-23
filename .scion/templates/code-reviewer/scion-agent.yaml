@@ -1,0 +1,18 @@
+# SPDX-FileCopyrightText: Copyright (C) Nicolas Lamirault <nicolas.lamirault@gmail.com>
+# SPDX-License-Identifier: Apache-2.0
+
+schema_version: "1"
+description: "Pilotariak code reviewer — independent second pass against the repo's own maps and the actual code"
+
+agent_instructions: agents.md
+system_prompt: system-prompt.md
+
+default_harness_config: codex
+
+skills:
+  - uri: "gh://Pilotariak/fabrika/pilotariak-context"
+  - uri: "gh://scion-frontiers/agent-team/code-review"
+  # code-review delegates severity disposition and the review cycle to
+  # software-engineering-process rather than defining its own — both need
+  # to be present together.
+  - uri: "gh://scion-frontiers/agent-team/software-engineering-process"
