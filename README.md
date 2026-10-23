@@ -12,63 +12,14 @@ every session. Short on purpose, points at each repo's own `AGENTS.md`/CI
 instead of copying them, and expected to drift — disagreements with a repo's
 actual source are the repo's to win.
 
-## Who it's for
+## Documentation
 
-Anyone running Scion agents against more than one Pilotariak repo.
-
-## What's inside
-
-| Path                              | Covers                                                                                                           |
-| --------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `skills/pilotariak-context/`      | The org-wide skill: repo map, DCO sign-off rule, per-repo prove-it commands, generated-file source-of-truth rule |
-| `.scion/templates/lead/`          | Scopes a goal, delegates to the builder, keeps the PR description true                                           |
-| `.scion/templates/builder/`       | Makes the change, proves it, hands off to review and QA                                                          |
-| `.scion/templates/code-reviewer/` | Independent second pass against the repo's own maps and the actual code                                          |
-| `.scion/templates/qa/`            | Runs the checks the change calls for, reports what each one proved                                               |
-
-## Use it
-
-No per-repo template install — any Scion agent can run straight off this
-repo by `gh://` URI. The machine still needs the normal Scion prerequisites
-first: `scion server start` once, then `scion init` inside the target repo,
-harness auth for whichever harness the template defaults to (`codex` for
-lead/code-reviewer, `claude` for builder/qa), and a git identity available
-inside the container — the templates stop and ask rather than guessing one.
-
-```bash
-cd kancha   # or frontis, azkena, xilo, plaza, website
-scion start lead "<your goal>" \
-  --type gh://Pilotariak/fabrika/.scion/templates/lead
-```
-
-The target repo is linked to your local Hub on first use and each agent gets
-its own git worktree by default — worktrees of the same repo share `.git`,
-which is what lets the reviewer and QA see the builder's branch without
-anything being pushed. The lead creates the builder, and the builder reports
-back to the lead rather than spawning review/QA itself — see each template's
-own `agents.md` for the exact handoff and why.
-
-If `gh://` latency on every start becomes a problem, sync the templates to
-your Hub once instead, and reference them by bare name:
-
-```bash
-cd fabrika && scion templates sync --all
-# elsewhere: scion start lead "<your goal>" --type lead
-```
-
-A synced copy needs a re-sync (`scion templates sync --all`) after every
-edit here; resolving a template straight by `gh://` URI is expected to pick
-up edits on the next start, but that path is also the least exercised part
-of this setup — see Status below.
-
-## Status
-
-Untested end to end — the `gh://Pilotariak/fabrika/...` URIs these templates
-and this README use only resolve once this lands on `main`, and running them
-for the first time is the actual test. The two external skills
-(`gh://scion-frontiers/agent-team/software-engineering-process` and
-`.../code-review`) are referenced unpinned, so they can change out from under
-these templates; pin them to a commit or tag if that becomes a problem.
+Start at [docs/](docs/) — organized with [Diátaxis](https://diataxis.fr/): a
+[tutorial](docs/tutorials/getting-started.md) to run your first agent, a
+[how-to](docs/how-to/) for adding a role template or syncing templates to a
+Hub, [reference](docs/reference/) for exact template and skill fields, and
+[explanation](docs/explanation/why-scion.md) for why this setup looks the
+way it does — including its current status and known gaps.
 
 ## Contributing
 

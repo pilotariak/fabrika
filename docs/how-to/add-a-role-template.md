@@ -68,9 +68,10 @@ Figure out, before writing `agents.md`:
   produced that work — the one invariant `software-engineering-process`
   doesn't let you collapse away.
 
-## 5. Update the README
+## 5. Update the reference docs
 
-Add a row to the "What's inside" table in the repo's top-level `README.md`.
+Add a row to the "Templates" table in
+[`docs/reference/README.md`](../reference/README.md).
 
 ## 6. Validate before committing
 

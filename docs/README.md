@@ -24,6 +24,7 @@ repo.
 ## How-to Guides
 
 - [Add a new role template](how-to/add-a-role-template.md)
+- [Sync templates to a Hub instead of resolving by `gh://`](how-to/sync-templates-to-hub.md)
 
 ## Reference
 
