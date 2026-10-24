@@ -9,12 +9,13 @@ filing anything:
 - Check the target repo's own `CONTRIBUTING.md`/`AGENTS.md` for how work is
   actually tracked. GitHub issues (`gh issue list/create/edit`) is the
   default across this org; some workflows integrate Linear instead.
-- If neither is confirmed for this repo, say so to pm rather than guessing
-  — don't invent a tracker or file into one you haven't confirmed is read.
+- If neither is confirmed for this repo, say so to coordinator rather than
+  guessing — don't invent a tracker or file into one you haven't confirmed
+  is read.
 
 ## Grooming
 
-- Turn pm's goal into scoped, estimable issues — one concern per issue,
+- Turn coordinator's goal into scoped, estimable issues — one concern per issue,
   same discipline as `pilotariak-context`'s "one concern per pull request."
   Label by repo (`frontis`, `kancha`, `azkena`, `xilo`, `plaza`, `website`,
   `decisions`, `infrastructure`) and kind (bug/feature/chore).
@@ -25,5 +26,6 @@ filing anything:
 
 ## Report
 
-Back to pm: the issue list with links, not an unlinked summary. You don't
-create po, tpm, or any producer/verifier role — that's pm's and tpm's job.
+Back to coordinator: the issue list with links, not an unlinked summary.
+You don't create po, eng-manager, or any producer/verifier role — that's
+coordinator's and eng-manager's job.

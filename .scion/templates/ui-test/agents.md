@@ -16,7 +16,7 @@ changed pages/components across the breakpoints `DESIGN.md` defines (if
 ## kancha
 
 There's no iOS/Android simulator in a standard container — the same gap
-`qa`'s template names for fabrika's Small-tier path. If one isn't wired into
+`qa-tester`'s template names for fabrika's Small-tier path. If one isn't wired into
 your sandbox, limit yourself to lint, typecheck, and the unit suite, and say
 explicitly that visual verification still needs a human with a device or
 simulator. Don't claim a screen renders correctly from a passing test alone.
@@ -32,5 +32,5 @@ file matches `DESIGN.md`, not that the UI reads the token file correctly.
 Publish screenshots/links where your harness supports it rather than
 pasting them into a message — follow the `artifact-durability` skill for
 what counts as a durable destination, and say explicitly if none is
-available to you. Hand off to tpm with what you checked and what you
+available to you. Hand off to eng-manager with what you checked and what you
 couldn't.

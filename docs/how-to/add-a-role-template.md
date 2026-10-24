@@ -1,7 +1,8 @@
 # Add a new role template
 
-Use this when a recurring task shape genuinely doesn't fit `lead`, `builder`,
-`code-reviewer`, `qa`, or the fourteen-role `pm`/`po`/`db`/`tpm`/… tree — not
+Use this when a recurring task shape genuinely doesn't fit `coordinator`,
+`developer`, `code-reviewer`, `qa-tester`, or the fourteen-role
+`po`/`db`/`eng-manager`/… tree — not
 preemptively. See
 [why this setup stops at four roles at the Small tier](../explanation/why-scion.md#why-only-four-roles-at-the-small-tier)
 and [the 14-role tree's own honest provenance](../explanation/why-scion.md#the-14-role-tree)
@@ -27,7 +28,7 @@ Every existing fabrika template follows this shape; match it:
   agents.md`, `system_prompt: system-prompt.md`, and a `default_harness_config`
   (`codex` or `claude` — pick based on which harness should own this role's
   judgment calls, the way `code-reviewer` deliberately runs on a different
-  harness than `builder`).
+  harness than `developer`).
 - **`system-prompt.md`** — 3-5 lines. Identity and the one-sentence job, not
   the operational detail.
 - **`agents.md`** — the operational instructions: what to do, in what order,

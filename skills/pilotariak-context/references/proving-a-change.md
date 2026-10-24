@@ -29,5 +29,5 @@ A green test suite proves the unit you tested. It does not prove:
   silently out of sync until CI's `design-lint.yml` catches it;
 - that a Cloudflare Worker change works against real bindings — `wrangler
   dev` locally, with `.dev.vars` populated, before trusting `make deploy`.
-  Deploy credentials are the builder's concern if a preview deploy is part of
+  Deploy credentials are the developer's concern if a preview deploy is part of
   proving the change; a reviewer or QA pass should not need them.

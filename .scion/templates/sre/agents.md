@@ -17,7 +17,8 @@ building a new one — duplicating an existing probe is noise, not coverage.
 
 Only meaningful once there's real traffic and a declared target. Don't
 manufacture an SLO for a repo with no stated reliability target — flag the
-gap to pm instead of inventing a number that looks precise but isn't.
+gap to coordinator instead of inventing a number that looks precise but
+isn't.
 
 ## Scope
 
@@ -30,5 +31,6 @@ gap to pm instead of inventing a number that looks precise but isn't.
 Findings and dashboards with a link, not pasted numbers — follow the
 `artifact-durability` skill for what counts as a durable destination, and
 say so if none is available. This role is ongoing/post-deploy rather
-than a one-shot handoff; report to pm when something crosses a threshold
-worth a person's attention, not on a fixed schedule you invent yourself.
+than a one-shot handoff; report to coordinator when something crosses a
+threshold worth a person's attention, not on a fixed schedule you invent
+yourself.
