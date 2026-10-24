@@ -1,12 +1,13 @@
 # fabrika documentation
 
 fabrika is the [Scion](https://github.com/GoogleCloudPlatform/scion) setup
-for the Pilotariak organization: agent templates (`lead`, `builder`,
-`code-reviewer`, `qa`) and the `pilotariak-context` skill that carries org
-facts no single repo's own `AGENTS.md` states. This documentation is
-organized following the [Diátaxis framework](https://diataxis.fr/), which
-structures content by what you're trying to do, not by what exists in the
-repo.
+for the Pilotariak organization: agent templates — the Small-tier
+`lead`/`builder`/`code-reviewer`/`qa` path, plus a 14-role Chunky/Large tree
+starting at `pm` — the `pilotariak-context` skill that carries org facts no
+single repo's own `AGENTS.md` states, and a handful of skills vendored and
+adapted from `scion-frontiers/agent-team`. This documentation is organized
+following the [Diátaxis framework](https://diataxis.fr/), which structures
+content by what you're trying to do, not by what exists in the repo.
 
 ## Where to start
 

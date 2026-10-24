@@ -46,16 +46,18 @@ generic SDLC shape, not forced by a recurring Pilotariak task.
 | `devops`    | [`.scion/templates/devops/`](../../.scion/templates/devops/)       |
 | `sre`       | [`.scion/templates/sre/`](../../.scion/templates/sre/)             |
 
-## External skills referenced across these templates
+## Skills vendored from scion-frontiers/agent-team
 
-Not fabrika's to document — read them at the source. All referenced
-unpinned — see [why this setup looks the way it does](../explanation/why-scion.md)
-for that tradeoff.
+fabrika doesn't reference these by `gh://` URI at the source — each is
+copied into `skills/` here and adapted to fabrika's own rules. See
+["Vendored, not referenced"](../explanation/why-scion.md#vendored-not-referenced)
+for why, and each skill's own attribution line for the upstream commit it
+was copied from.
 
-| Skill                                                                                                                         | Used by                                          |
-| ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
-| [`software-engineering-process`](https://github.com/scion-frontiers/agent-team/tree/main/skills/software-engineering-process) | `lead`, `code-reviewer`, `pm`, `tpm`, `reviewer` |
-| [`code-review`](https://github.com/scion-frontiers/agent-team/tree/main/skills/code-review)                                   | `code-reviewer`, `reviewer`                      |
-| [`agent-state-continuity`](https://github.com/scion-frontiers/agent-team/tree/main/skills/agent-state-continuity)             | `pm`                                             |
-| [`docs-update`](https://github.com/scion-frontiers/agent-team/tree/main/skills/docs-update)                                   | `doc`                                            |
-| [`artifact-durability`](https://github.com/scion-frontiers/agent-team/tree/main/skills/artifact-durability)                   | `ui-test`, `perf-test`, `sre`                    |
+| Skill                          | Source                                                                               | Used by                                          |
+| ------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------ |
+| `software-engineering-process` | [`skills/software-engineering-process/`](../../skills/software-engineering-process/) | `lead`, `code-reviewer`, `pm`, `tpm`, `reviewer` |
+| `code-review`                  | [`skills/code-review/`](../../skills/code-review/)                                   | `code-reviewer`, `reviewer`                      |
+| `agent-state-continuity`       | [`skills/agent-state-continuity/`](../../skills/agent-state-continuity/)             | `pm`                                             |
+| `docs-update`                  | [`skills/docs-update/`](../../skills/docs-update/)                                   | `doc`                                            |
+| `artifact-durability`          | [`skills/artifact-durability/`](../../skills/artifact-durability/)                   | `pm`, `tpm`, `ui-test`, `perf-test`, `sre`       |

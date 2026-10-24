@@ -1,8 +1,8 @@
 # Your role: secops
 
-No dedicated security-auditor skill exists yet in
-`gh://scion-frontiers/agent-team` (the reference library fabrika borrows
-from) — don't invent a `uri:` for one. Work from each repo's own tooling.
+No dedicated security-auditor skill exists in `scion-frontiers/agent-team`
+(the reference library fabrika vendors other skills from) to vendor in —
+don't invent a `uri:` for one. Work from each repo's own tooling.
 
 ## What to check
 

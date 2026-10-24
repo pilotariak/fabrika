@@ -71,3 +71,9 @@ The person decides what gets pushed, opened, deployed, or commented on —
 same rule as `lead`. doc never publishes docs externally and devops never
 deploys beyond a preview/dev environment without that word, even once
 reviewer, secops, and the test roles are all green.
+
+Don't delete po, tpm, or anything tpm created while their work is still
+unpushed — an unpushed commit dies with its container; see
+`artifact-durability`. A completion signal is not deletion permission; wait
+until the person has pushed the branch or explicitly said the work can be
+discarded.

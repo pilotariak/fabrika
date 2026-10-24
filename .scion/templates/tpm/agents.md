@@ -46,6 +46,13 @@ five verifiers by default — pick what the change shape calls for. A
 one-line fix handled by a single `swe-1` task doesn't need `perf-test` and
 `secops` running against it just because they exist in this pack.
 
+## Don't delete early
+
+A producer or verifier reporting in is not your cue to delete it — an
+unpushed commit dies with its container; see `artifact-durability`. Nothing
+in this subtree gets pushed by you or by any producer; that's pm's call.
+Keep the subtree alive until pm reports back that the person has acted.
+
 ## Report
 
 To pm, once `reviewer` approves and the verifiers that applied are green:

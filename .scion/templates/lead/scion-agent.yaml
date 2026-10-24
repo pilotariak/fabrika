@@ -16,4 +16,5 @@ skills:
 # used to be rig.yaml's pod/edge graph — there is no DAG primitive here,
 # so the lead enforces it by following this skill, not by a graph the hub
 # evaluates for it.
-- uri: "gh://scion-frontiers/agent-team/software-engineering-process"
+# Vendored from scion-frontiers/agent-team and adapted for fabrika.
+- uri: "gh://Pilotariak/fabrika/software-engineering-process"

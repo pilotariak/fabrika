@@ -38,8 +38,9 @@ than "a recurring task shape forced it" (see that section for the honest
 provenance).
 
 The reason is sizing, not scope-cutting. `software-engineering-process`
-(the ownership/delegation skill fabrika borrows from that same repo) scales
-role count to the *depth of the ownership tree* an issue needs:
+(the ownership/delegation skill fabrika vendors and adapts from that same
+repo — see "Vendored, not referenced" below) scales role count to the
+*depth of the ownership tree* an issue needs:
 
 - **Small** (depth 1): coordinator creates a developer and a reviewer.
   Everything in Pilotariak's actual history of changes has been this shape —
@@ -70,8 +71,12 @@ if the corresponding task shape actually recurs.
 
 A second tree exists in this pack: `pm`, `po`, `db`, `tpm`, `swe-1`,
 `swe-2`, `swe-test`, `ui-test`, `perf-test`, `secops`, `reviewer`, `doc`,
-`devops`, `sre` — the Chunky/Large depth this document names above,
-mirroring a 14-agent SDLC-team shape from outside this org. Its honest
+`devops`, `sre` — the Chunky/Large shape this document names above, but at
+depth 2: `pm` creates `po`/`tpm` directly and `tpm` creates its producers
+and verifiers directly, with no dedicated-issue-owner layer between them
+(see `software-engineering-process`'s own "Mapping onto fabrika's
+templates" section for the full comparison). It mirrors a 14-agent
+SDLC-team shape from outside this org. Its honest
 provenance: it was **not** added because a recurring Pilotariak task shape
 forced it, which is the bar this document otherwise insists on. It exists
 because the person asked for that specific shape. Treat it accordingly:
@@ -139,16 +144,38 @@ versus what was delivered — formalizing the brief as a small schema (instead
 of free text in a `scion message`) is the next deliberate step, not
 something to pre-build now.
 
+## Vendored, not referenced
+
+`software-engineering-process`, `code-review`, `agent-state-continuity`,
+`docs-update`, and `artifact-durability` all originate in
+[`scion-frontiers/agent-team`](https://github.com/scion-frontiers/agent-team)
+(Apache-2.0), but fabrika does not reference them there by `gh://` URI —
+each one is copied into `skills/` in this repo and edited to match fabrika's
+actual rules (see
+[the agent templates reference](../reference/agents.md) for which template
+uses which). This was a deliberate choice over referencing them unpinned:
+
+- **Pro:** an upstream change to `scion-frontiers/agent-team` cannot change
+  fabrika's agent behavior without a PR here. No surprise drift.
+- **Con:** fabrika does not get upstream fixes or improvements for free
+  either — someone has to notice them and re-sync.
+- Three of the five needed real changes, not a straight copy, because the
+  upstream text assumed things that aren't true here: `artifact-durability`
+  assumed pushing to a remote is how you prove work is safe, which
+  contradicts "the person decides what gets pushed" (`lead`'s and `pm`'s own
+  rule, and "Delegation is agent-initiated" below); `code-review` assumed a
+  `CLAUDE.md` and an already-open PR to diff against, where fabrika reviews
+  happen pre-push in a shared worktree; `software-engineering-process`'s
+  generic coordinator/architect/EM vocabulary needed a mapping onto what
+  fabrika's two trees actually have — see that skill's own "Mapping onto
+  fabrika's templates" section.
+- Each vendored `SKILL.md` carries a one-line attribution naming the
+  upstream commit it was copied from
+  (`scion-frontiers/agent-team@3650f1b`), so a later re-sync has something
+  to diff against.
+
 ## Unresolved, on purpose
 
-- The external skills this setup depends on — `software-engineering-process`,
-  `code-review`, and, for the 14-role tree, `agent-state-continuity`,
-  `docs-update`, and `artifact-durability` (see
-  [the agent templates reference](../reference/agents.md) for which
-  template uses which) — are all referenced unpinned: an upstream change
-  there changes fabrika's agent behavior without a PR here. Acceptable for
-  now because each is small, stable, and reviewed before being adopted; pin
-  one to a commit if that stops being true for it.
 - Nothing here has run end to end yet. See the repo's `CONTRIBUTING.md` and
   [the getting-started tutorial](../tutorials/getting-started.md) for the
   first real test.

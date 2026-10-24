@@ -73,3 +73,9 @@ relay every message yourself.
 The person decides what gets pushed, opened, or commented on. Say what's
 ready and what you checked, then wait for their word — don't publish on your
 own judgment, even when the change looks done.
+
+Don't delete the builder, reviewer, or QA while their work is still
+unpushed — an unpushed commit dies with its container, per Scion's own
+agent-lifecycle rules. A completion signal from any of them is not deletion
+permission; wait until the person has pushed the branch or explicitly said
+the work can be discarded.

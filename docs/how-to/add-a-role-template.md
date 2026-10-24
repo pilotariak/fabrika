@@ -42,16 +42,20 @@ skills:
   - uri: "gh://Pilotariak/fabrika/pilotariak-context"
 ```
 
-every role needs the org facts. Beyond that, check
+every role needs the org facts. Beyond that, check `skills/` in this repo
+first — `software-engineering-process` for anything that creates and
+supervises other agents, `artifact-durability` for anything that produces a
+deliverable, `agent-state-continuity` for anything that needs to survive a
+container restart. Only if none of those fit, check
 [scion-frontiers/agent-team](https://github.com/scion-frontiers/agent-team/tree/main/skills)
-for something that already solves the problem — `software-engineering-process`
-for anything that creates and supervises other agents,
-`agent-state-continuity` for anything that needs to survive a container
-restart — before writing a new one. If you do add an external skill,
-**write a comment above the `uri:` line saying why**, the way
-`code-reviewer/scion-agent.yaml` does for
-`software-engineering-process` — the next person reading the file shouldn't
-have to reconstruct the reasoning.
+for something to vendor: copy it into `skills/<name>/` (don't reference it
+by `gh://` URI at the source — see
+["Vendored, not referenced"](../explanation/why-scion.md#vendored-not-referenced)
+for why), adapt anything that assumes something not true here, and add a
+one-line attribution naming the upstream commit. Before adding any skill
+(vendored or `pilotariak-context`), **write a comment above the `uri:` line
+saying why**, the way `code-reviewer/scion-agent.yaml` does — the next
+person reading the file shouldn't have to reconstruct the reasoning.
 
 Keep the `pilotariak-context` skill itself narrow: org facts no single
 repo's own `AGENTS.md` states. A new role's domain-specific knowledge
@@ -72,8 +76,10 @@ Figure out, before writing `agents.md`:
 
 ## 5. Update the reference docs
 
-Add a row to the "Templates" table in
-[`docs/reference/README.md`](../reference/README.md).
+Add a row to the right table in
+[`docs/reference/agents.md`](../reference/agents.md) — Small tier or the
+14-role tree — and, if you added a vendored skill, a row to its skills
+table too.
 
 ## 6. Validate before committing
 

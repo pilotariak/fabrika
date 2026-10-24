@@ -6,7 +6,7 @@ reads it from, and duplicating it here would just give it a second copy to
 go stale.
 
 - [Agent templates](agents.md) — every template in `.scion/templates/`, Small
-  tier and the 14-role tree, and the external skills they reference.
+  tier and the 14-role tree, and the skills they vendor and reference.
 
 ## Skill
 
@@ -16,4 +16,5 @@ go stale.
 
 Its `SKILL.md` is the index; `references/` underneath it holds the per-repo
 command table, the wrong-claim tells, and the frontis agentic-automation
-notes.
+notes. [Agent templates](agents.md) also lists the five skills fabrika
+vendors from `scion-frontiers/agent-team` and adapts for its own rules.

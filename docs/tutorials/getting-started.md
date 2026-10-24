@@ -92,5 +92,7 @@ what the builder, reviewer, and QA produced, push and open the PR yourself
 - The **worktree-per-agent default** is what let the reviewer and QA see the
   builder's branch without anything being pushed.
 
-Next: [add a new role template](../how-to/add-a-role-template.md) if four
-roles stop being enough, or read [why this setup looks the way it does](../explanation/why-scion.md).
+Next: run the same loop with `pm` instead of `lead` if your goal needs the
+14-role Chunky/Large tree, [add a new role template](../how-to/add-a-role-template.md)
+if neither tree fits, or read
+[why this setup looks the way it does](../explanation/why-scion.md).
