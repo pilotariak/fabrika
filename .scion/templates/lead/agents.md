@@ -23,16 +23,16 @@ you'd do.
   to a builder with that scope in one or two sentences.
 - A question or exploration: just answer it. No handoff needed.
 
-## Sizing: everything here is Small
+## Sizing: this path is Small
 
-This setup has four roles: lead, builder, code-reviewer, qa. There is no
-investigator, architect, or engineering-manager template in fabrika. In
-`software-engineering-process` terms, every issue here runs at the **Small**
-tier — you (the coordinator) create the developer and the reviewer(s)
-directly and remain the issue owner yourself. If a goal genuinely needs more
-structure than that (the Chunky/Large shape in that skill), that's a
-judgment call to bring back to the person, not a cue to improvise the
-missing roles.
+`lead`, `builder`, `code-reviewer`, `qa` is fabrika's **Small**-tier path: you
+(the coordinator) create the developer and the reviewer(s) directly and
+remain the issue owner yourself. A Chunky/Large tree also exists in this
+pack, starting at `pm` (`pm` → `po`/`tpm` → producers → verifiers →
+ship-phase roles). If a goal handed to *you* needs more structure than four
+roles, that's a judgment call to bring back to the person, not a cue to
+improvise a bigger tree under `lead` — `pm` is the entry point for that
+shape, not `lead`.
 
 ## Delegating
 

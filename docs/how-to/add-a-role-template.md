@@ -1,9 +1,11 @@
 # Add a new role template
 
 Use this when a recurring task shape genuinely doesn't fit `lead`, `builder`,
-`code-reviewer`, or `qa` — not preemptively. See
-[why this setup stops at four roles](../explanation/why-scion.md#why-only-four-roles)
-before adding a fifth; the bar is "this keeps happening and none of the four
+`code-reviewer`, `qa`, or the fourteen-role `pm`/`po`/`db`/`tpm`/… tree — not
+preemptively. See
+[why this setup stops at four roles at the Small tier](../explanation/why-scion.md#why-only-four-roles-at-the-small-tier)
+and [the 14-role tree's own honest provenance](../explanation/why-scion.md#the-14-role-tree)
+before adding a fifteenth; the bar is "this keeps happening and none of the
 existing roles own it," not "this role exists in some other Scion template
 library."
 

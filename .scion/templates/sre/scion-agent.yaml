@@ -1,0 +1,18 @@
+# SPDX-FileCopyrightText: Copyright (C) Nicolas Lamirault <nicolas.lamirault@gmail.com>
+# SPDX-License-Identifier: Apache-2.0
+
+schema_version: "1"
+description: "Pilotariak sre — observability and SLO/SLI audits for the deployed Workers repos and frontis's GraphQL gateway, once devops has shipped"
+
+agent_instructions: agents.md
+system_prompt: system-prompt.md
+
+default_harness_config: codex
+
+skills:
+- uri: "gh://Pilotariak/fabrika/pilotariak-context"
+# sre's deliverable (a health/SLO report) has to survive this agent's own
+# container being deleted — this skill owns that durability question. Not
+# gcs-artifact-publishing: that assumes a Scion GCS bucket, and this org
+# runs on Cloudflare with no such bucket confirmed.
+- uri: "gh://scion-frontiers/agent-team/artifact-durability"
