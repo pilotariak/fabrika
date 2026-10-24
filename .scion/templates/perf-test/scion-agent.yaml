@@ -1,0 +1,19 @@
+# SPDX-FileCopyrightText: Copyright (C) Nicolas Lamirault <nicolas.lamirault@gmail.com>
+# SPDX-License-Identifier: Apache-2.0
+
+schema_version: "1"
+description: "Pilotariak perf-test — latency/load profiling for the Cloudflare Workers repos and frontis's GraphQL gateway"
+
+agent_instructions: agents.md
+system_prompt: system-prompt.md
+
+default_harness_config: claude
+
+skills:
+- uri: "gh://Pilotariak/fabrika/pilotariak-context"
+# perf-test's deliverable (a load-test report) has to survive this agent's
+# own container being deleted — this skill owns that durability question.
+# Not gcs-artifact-publishing: that assumes a Scion GCS bucket, and this
+# org runs on Cloudflare with no such bucket confirmed. Vendored from
+# scion-frontiers/agent-team and adapted for fabrika's actual push rules.
+- uri: "gh://Pilotariak/fabrika/artifact-durability"

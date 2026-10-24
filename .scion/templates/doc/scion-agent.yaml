@@ -1,0 +1,17 @@
+# SPDX-FileCopyrightText: Copyright (C) Nicolas Lamirault <nicolas.lamirault@gmail.com>
+# SPDX-License-Identifier: Apache-2.0
+
+schema_version: "1"
+description: "Pilotariak doc — keeps a repo's own docs aligned with what shipped; repoints the reference 'OpenAPI Swagger & wiki sync' role at this org's GraphQL gateway and Diátaxis docs"
+
+agent_instructions: agents.md
+system_prompt: system-prompt.md
+
+default_harness_config: claude
+
+skills:
+- uri: "gh://Pilotariak/fabrika/pilotariak-context"
+# docs-update's branch-impact review and code-doc alignment is exactly
+# this role's job; no need to redefine it here. Vendored from
+# scion-frontiers/agent-team and adapted for fabrika.
+- uri: "gh://Pilotariak/fabrika/docs-update"

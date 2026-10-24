@@ -1,0 +1,13 @@
+# SPDX-FileCopyrightText: Copyright (C) Nicolas Lamirault <nicolas.lamirault@gmail.com>
+# SPDX-License-Identifier: Apache-2.0
+
+schema_version: "1"
+description: "Pilotariak db — schema (DDL) changes and test-data seeds for frontis's D1 database"
+
+agent_instructions: agents.md
+system_prompt: system-prompt.md
+
+default_harness_config: claude
+
+skills:
+- uri: "gh://Pilotariak/fabrika/pilotariak-context"

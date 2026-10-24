@@ -10,13 +10,13 @@ standard yet.
 ## What frontis runs today
 
 | Workflow                      | Trigger              | Does                                                                           |
-| ------------------------------ | --------------------- | -------------------------------------------------------------------------------- |
-| `aw-issue-triage-agent`       | Scheduled (weekdays) | Labels untriaged issues (`kind/*`, `status/available`), removes `needs/triage`  |
+| ----------------------------- | -------------------- | ------------------------------------------------------------------------------ |
+| `aw-issue-triage-agent`       | Scheduled (weekdays) | Labels untriaged issues (`kind/*`, `status/available`), removes `needs/triage` |
 | `aw-pr-triage-agent`          | PR events            | Equivalent triage pass for pull requests                                       |
 | `aw-pr-stale-agent`           | Scheduled            | Flags/closes stale PRs                                                         |
 | `aw-dependabot-issue-bundler` | Scheduled            | Groups related Dependabot issues                                               |
 | `aw-dependabot-pr-bundler`    | Scheduled            | Groups related Dependabot PRs                                                  |
-| `repo-assist`                 | —                     | General repo-assist agent                                                      |
+| `repo-assist`                 | —                    | General repo-assist agent                                                      |
 
 Each has `safe-outputs` scoping exactly what it's allowed to do (e.g.
 `add-labels` with an explicit allow-list, `add-comment`) and runs GitHub's
