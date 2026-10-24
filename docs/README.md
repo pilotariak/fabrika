@@ -10,12 +10,12 @@ repo.
 
 ## Where to start
 
-| I want to...                                   | Go to                                         |
-| ------------------------------------------------ | ------------------------------------------------ |
-| Run my first agent against a Pilotariak repo    | [Tutorials](tutorials/)                       |
-| Add a new role template                         | [How-to Guides](how-to/)                      |
-| Look up a template's or skill's exact fields    | [Reference](reference/)                       |
-| Understand why Scion, and why this delegation model | [Explanation](explanation/)               |
+| I want to...                                        | Go to                       |
+| --------------------------------------------------- | --------------------------- |
+| Run my first agent against a Pilotariak repo        | [Tutorials](tutorials/)     |
+| Add a new role template                             | [How-to Guides](how-to/)    |
+| Look up a template's or skill's exact fields        | [Reference](reference/)     |
+| Understand why Scion, and why this delegation model | [Explanation](explanation/) |
 
 ## Tutorials
 
@@ -37,4 +37,4 @@ repo.
 
 ---
 
-_Documentation structured with [Diátaxis](https://diataxis.fr/)_
+*Documentation structured with [Diátaxis](https://diataxis.fr/)*

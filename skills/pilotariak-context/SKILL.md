@@ -21,16 +21,16 @@ pull request to `Pilotariak/fabrika` instead of trusting the stale copy.
 
 ## Repo map
 
-| Repo             | Purpose                                                                             | Stack                                     |
-| ---------------- | ------------------------------------------------------------------------------------ | ------------------------------------------ |
-| `frontis`        | GraphQL gateway over competition data — the source of truth every other repo reads   | Bun, GraphQL Hive, Cloudflare Workers, D1 |
-| `kancha`         | Mobile app for competition management                                                | React Native, Expo, TypeScript            |
-| `azkena`         | MCP server exposing competition data as tools for AI assistants                      | Cloudflare Worker, `@modelcontextprotocol/sdk` |
-| `xilo`           | Slack bot: slash commands plus a natural-language agent over Frontis                 | Cloudflare Worker, Workers AI (uses `npm`, not `bun`) |
-| `plaza`          | AT Protocol (Bluesky) surface — lexicons and workers                                 | Cloudflare Workers                        |
-| `website`        | Public website                                                                       | Astro                                      |
-| `decisions`      | Architecture Decision Records for the org                                            | Markdown                                   |
-| `infrastructure` | Shared infrastructure-as-code                                                        | —                                           |
+| Repo             | Purpose                                                                            | Stack                                                 |
+| ---------------- | ---------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| `frontis`        | GraphQL gateway over competition data — the source of truth every other repo reads | Bun, GraphQL Hive, Cloudflare Workers, D1             |
+| `kancha`         | Mobile app for competition management                                              | React Native, Expo, TypeScript                        |
+| `azkena`         | MCP server exposing competition data as tools for AI assistants                    | Cloudflare Worker, `@modelcontextprotocol/sdk`        |
+| `xilo`           | Slack bot: slash commands plus a natural-language agent over Frontis               | Cloudflare Worker, Workers AI (uses `npm`, not `bun`) |
+| `plaza`          | AT Protocol (Bluesky) surface — lexicons and workers                               | Cloudflare Workers                                    |
+| `website`        | Public website                                                                     | Astro                                                 |
+| `decisions`      | Architecture Decision Records for the org                                          | Markdown                                              |
+| `infrastructure` | Shared infrastructure-as-code                                                      | —                                                     |
 
 ## frontis is the hub
 

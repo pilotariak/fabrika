@@ -10,9 +10,9 @@ system_prompt: system-prompt.md
 default_harness_config: codex
 
 skills:
-  - uri: "gh://Pilotariak/fabrika/pilotariak-context"
-  - uri: "gh://scion-frontiers/agent-team/code-review"
-  # code-review delegates severity disposition and the review cycle to
-  # software-engineering-process rather than defining its own — both need
-  # to be present together.
-  - uri: "gh://scion-frontiers/agent-team/software-engineering-process"
+- uri: "gh://Pilotariak/fabrika/pilotariak-context"
+- uri: "gh://scion-frontiers/agent-team/code-review"
+# code-review delegates severity disposition and the review cycle to
+# software-engineering-process rather than defining its own — both need
+# to be present together.
+- uri: "gh://scion-frontiers/agent-team/software-engineering-process"

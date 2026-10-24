@@ -10,4 +10,4 @@ system_prompt: system-prompt.md
 default_harness_config: claude
 
 skills:
-  - uri: "gh://Pilotariak/fabrika/pilotariak-context"
+- uri: "gh://Pilotariak/fabrika/pilotariak-context"
