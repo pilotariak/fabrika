@@ -1,0 +1,13 @@
+# SPDX-FileCopyrightText: Copyright (C) Nicolas Lamirault <nicolas.lamirault@gmail.com>
+# SPDX-License-Identifier: Apache-2.0
+
+schema_version: "1"
+description: "Pilotariak security-auditor — dependency and code vulnerability scanning for a producer's branch, independent of the producer"
+
+agent_instructions: agents.md
+system_prompt: system-prompt.md
+
+default_harness_config: codex
+
+skills:
+- uri: "gh://Pilotariak/fabrika/pilotariak-context"

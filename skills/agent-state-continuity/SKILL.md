@@ -3,8 +3,8 @@ name: agent-state-continuity
 description: >-
   How to maintain a scratch state file that survives container restarts and agent
   deletion. Covers the agent-name namespace rule and scratchpad storage. Use when
-  your role requires persistent state across sessions (pm, tpm, or any orchestrator
-  that tracks workstreams).
+  your role requires persistent state across sessions (coordinator, eng-manager, or any
+  orchestrator that tracks workstreams).
 ---
 
 # Agent State Continuity
@@ -19,10 +19,11 @@ file should never exist inside a git working tree.
 What `<scratchpad>` resolves to depends on how this Hub is configured — `scion-frontiers/agent-team`'s own deployment uses `/scion-volumes/scratchpad/`, but that's their infrastructure, not a
 guaranteed Scion default. Confirm this Hub's actual mount (ask its operator, or check what a sibling agent on this project already used) before assuming that path.
 
-Substitute your own agent name into the path, so an agent named `pm-xilo-redesign` writes to `<scratchpad>/projects/<slug>/pm-xilo-redesign-state.md`.
+Substitute your own agent name into the path, so an agent named `coordinator-xilo-redesign` writes to `<scratchpad>/projects/<slug>/coordinator-xilo-redesign-state.md`.
 
-**The namespace is your agent name, not your role.** One fixed name per role is one name for every instance of that role, so the second `pm` or `tpm` on one project writes the same file — last writer
-wins, no error and no edit event, and read-before-write does not help because by then the corruption looks like the reader's own file. The agent name is the only defence against this collision.
+**The namespace is your agent name, not your role.** One fixed name per role is one name for every instance of that role, so the second `coordinator` or `eng-manager` on one project writes the same
+file — last writer wins, no error and no edit event, and read-before-write does not help because by then the corruption looks like the reader's own file. The agent name is the only defence against
+this collision.
 
 ## Suggested structure
 

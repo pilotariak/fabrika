@@ -1,0 +1,26 @@
+# SPDX-FileCopyrightText: Copyright (C) Nicolas Lamirault <nicolas.lamirault@gmail.com>
+# SPDX-License-Identifier: Apache-2.0
+
+schema_version: "1"
+description: "Pilotariak researcher — standalone, ad hoc deep research with source attribution; not part of either tree, any role can start it"
+
+agent_instructions: agents.md
+system_prompt: system-prompt.md
+
+# Upstream pins this role to gemini-cli + a larger model ("harness_config:
+# gemini-cli" / "model: L", not this pack's usual "default_harness_config"
+# field) on the reasoning that Google-search-grounded Gemini models fit a
+# research role well. fabrika hasn't verified that field pairing against
+# Scion's own agent-config schema, so it keeps this role on the field name
+# every other template here uses rather than guessing at an unverified one.
+# Revisit if gemini-cli turns out to matter for this role's research
+# quality in practice.
+default_harness_config: codex
+
+skills:
+- uri: "gh://Pilotariak/fabrika/pilotariak-context"
+# Even a general-purpose researcher benefits from the repo map and
+# frontis-is-the-hub caution when a question touches this org's own
+# systems rather than an external topic.
+# Vendored from scion-frontiers/agent-team and adapted for fabrika.
+- uri: "gh://Pilotariak/fabrika/artifact-durability"

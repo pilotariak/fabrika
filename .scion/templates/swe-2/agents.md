@@ -34,11 +34,11 @@ correctly from a passing test alone; that's what `ui-test` is for.
 
 ## Hand off
 
-You don't start the verifiers yourself — tpm does. Once there's a commit to
-look at:
+You don't start the verifiers yourself — eng-manager does. Once there's a
+commit to look at:
 
 ```bash
-scion message @<tpm-agent-name> \
+scion message @<eng-manager-agent-name> \
   "ready for review: branch <branch>, commit <sha>. ran: <commands>. didn't check: <gaps>."
 ```
 

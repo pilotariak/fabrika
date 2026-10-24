@@ -23,10 +23,11 @@ workflow for the exact deploy command (Workers Builds vs a manual
 
 Provisioning or deploying past a preview/dev environment needs the person's
 explicit go-ahead — same publish gate every other role in this pack follows,
-even once reviewer, secops, and the test roles are all green.
+even once code-reviewer, security-auditor, and the test roles are all
+green.
 
 ## Report
 
 What you provisioned or deployed, against what environment, and what you
 verified afterward (health check, smoke test) — not just that the command
-exited zero. Hand off to pm.
+exited zero. Hand off to coordinator.

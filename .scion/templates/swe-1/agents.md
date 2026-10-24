@@ -36,11 +36,11 @@ command table.
 
 ## Hand off
 
-You don't start the verifiers yourself — tpm does, so tpm stays subscribed
-to what they find. Once there's a commit to look at:
+You don't start the verifiers yourself — eng-manager does, so eng-manager
+stays subscribed to what they find. Once there's a commit to look at:
 
 ```bash
-scion message @<tpm-agent-name> \
+scion message @<eng-manager-agent-name> \
   "ready for review: branch <branch>, commit <sha>. ran: <commands>. didn't check: <gaps>."
 ```
 

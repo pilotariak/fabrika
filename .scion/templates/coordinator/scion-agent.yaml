@@ -1,0 +1,31 @@
+# SPDX-FileCopyrightText: Copyright (C) Nicolas Lamirault <nicolas.lamirault@gmail.com>
+# SPDX-License-Identifier: Apache-2.0
+
+schema_version: "1"
+description: "Pilotariak coordinator — entry point for any goal; sizes it, delegates to developer directly (Small) or po/eng-manager (Chunky/Large), and is the one who says yes before anything ships"
+
+agent_instructions: agents.md
+system_prompt: system-prompt.md
+
+default_harness_config: codex
+
+skills:
+- uri: "gh://Pilotariak/fabrika/pilotariak-context"
+# The coordinator is the issue owner: who creates whom, when delegated work
+# is actually done, and how a review cycle is governed. This replaces what
+# used to be rig.yaml's pod/edge graph — there is no DAG primitive here, so
+# the coordinator enforces it by following this skill, not by a graph the
+# hub evaluates for it. Also governs the collapse rule so a Small-tier goal
+# doesn't spin up the full Chunky/Large tree by default.
+# Vendored from scion-frontiers/agent-team and adapted for fabrika.
+- uri: "gh://Pilotariak/fabrika/software-engineering-process"
+# Tracks a multi-agent workstream (po, eng-manager, and everything
+# eng-manager creates) across a container restart — the Small path never
+# needs this, but the coordinator template covers both.
+# Vendored from scion-frontiers/agent-team and adapted for fabrika.
+- uri: "gh://Pilotariak/fabrika/agent-state-continuity"
+# Must not delete anything it or eng-manager created while its work is
+# still unpushed — this skill owns that lifecycle rule.
+# Vendored from scion-frontiers/agent-team and adapted for fabrika's
+# actual push semantics.
+- uri: "gh://Pilotariak/fabrika/artifact-durability"

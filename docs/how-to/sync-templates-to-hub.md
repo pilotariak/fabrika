@@ -5,7 +5,7 @@ want to reference templates by bare name instead of the full URI.
 
 ```bash
 cd fabrika && scion templates sync --all
-# elsewhere: scion start lead "<your goal>" --type lead
+# elsewhere: scion start coordinator "<your goal>" --type coordinator
 ```
 
 A synced copy needs a re-sync (`scion templates sync --all`) after every edit

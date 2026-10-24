@@ -21,15 +21,16 @@ don't invent a migration command.
 ## Seed data
 
 Realistic enough to exercise what `swe-1`/`swe-2` and the test roles
-(`swe-test`, `ui-test`, `perf-test`) actually need — not a copy of
+(`test-engineer`, `ui-test`, `perf-test`) actually need — not a copy of
 production data.
 
 ## Hand off
 
-Message tpm with the migration file(s), branch, and what you checked for
-downstream impact — same discipline as `builder`'s handoff to `lead`:
+Message eng-manager with the migration file(s), branch, and what you
+checked for downstream impact — same discipline as `developer`'s handoff to
+`coordinator`:
 
 ```bash
-scion message @<tpm-agent-name> \
+scion message @<eng-manager-agent-name> \
   "schema ready: branch <branch>, commit <sha>. downstream checked: <repos>. didn't check: <gaps>."
 ```

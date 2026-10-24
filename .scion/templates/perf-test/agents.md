@@ -28,4 +28,4 @@ gate every other role in this pack follows.
 What load pattern, against what environment, what it found. Publish the
 report and link it rather than pasting raw numbers — follow the
 `artifact-durability` skill for what counts as a durable destination, and
-say so if none is available. Hand off to tpm.
+say so if none is available. Hand off to eng-manager.

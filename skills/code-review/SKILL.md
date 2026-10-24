@@ -219,7 +219,8 @@ dead code; do not silently delete something you are unsure about.
 
 ## Output Format
 
-Report the review by `scion message` to whoever created you — `lead` or `tpm` — rather than
+Report the review by `scion message` to whoever created you — `coordinator` or
+`eng-manager` — rather than
 writing it to a path only you can see; see `artifact-durability` for why. For a review long
 enough that it doesn't fit comfortably in a message body, write it to the project's shared
 scratchpad and name that file in your message. Use this structure either way:
@@ -287,7 +288,8 @@ declared blocking in the severity table; APPROVE is available only when what rem
 - Findings with no severity label — the author cannot tell what is required.
 - A long list of nits with a structural problem buried inside it.
 - Security-sensitive changes reviewed without a security pass — for fabrika, that's
-  `secops`'s job on the 14-role tree; name the gap if it's missing on the Small-tier path.
+  `security-auditor`'s job on the Chunky/Large tree; name the gap if it's missing on the
+  Small-tier path.
 - A bug fix with no regression test.
 - A refactor that moves code without reducing the concepts a reader must hold.
 - New conditionals scattered into unrelated code paths.
@@ -297,7 +299,7 @@ declared blocking in the severity table; APPROVE is available only when what rem
 
 ## Getting the Diff to Review
 
-fabrika review happens **before anything is pushed**: `tpm`/`lead` start you in a worktree
+fabrika review happens **before anything is pushed**: `eng-manager`/`coordinator` start you in a worktree
 that shares `.git` with the producer's, pointed at the exact branch the producer named in
 its handoff message. There is usually no open PR yet, so `gh pr diff` has nothing to read —
 work from the branch directly.
@@ -359,5 +361,5 @@ gh pr view <num> --json files,additions,deletions,baseRefName,headRefName,body,a
 | What the author owes on a finding after it is filed      | `software-engineering-process` → **The review cycle** (this pack) |
 | Change/project sizing thresholds                         | `software-engineering-process` → **Sizing** (this pack)           |
 | How a review report survives the agent that wrote it     | `artifact-durability` (this pack)                                 |
-| Deeper, dedicated security review                        | `secops` template (this pack)                                     |
+| Deeper, dedicated security review                        | `security-auditor` template (this pack)                           |
 | Dedicated load/latency profiling                         | `perf-test` template (this pack)                                  |

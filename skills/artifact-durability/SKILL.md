@@ -57,7 +57,7 @@ file, and any container-local scratch directory.
 
 ## The tension with fabrika's own publish gate — and how it's resolved
 
-`lead` and `pm` both say "the person decides what gets pushed," and fabrika's
+`coordinator` says "the person decides what gets pushed," and fabrika's
 worktree-per-agent default lets a reviewer or verifier see a producer's commit without
 anything being pushed. Read against the rule above, that commit is **not yet durable** —
 it is local to the producer's container (or the shared worktree, which is still inside the
@@ -71,9 +71,9 @@ decided whether to push it or explicitly said the work can be discarded.** Scion
 "Deleting an agent with unpushed work" anti-pattern (`scion-agent-manage` → **Agent
 Lifecycle**) names exactly this failure mode. Concretely:
 
-- A producer does not push its own branch — pushing is `lead`'s/`pm`'s call, following
-  their own publish-gate rule.
-- `lead`/`pm`/`tpm` do not delete a producer, reviewer, or verifier whose work is still
+- A producer does not push its own branch — pushing is `coordinator`'s call, following
+  its own publish-gate rule.
+- `coordinator`/`eng-manager` do not delete a producer, reviewer, or verifier whose work is still
   the subject of an open review cycle, even once it reports completion — a completion
   signal is not deletion permission (`scion-agent-manage` → **Agent Lifecycle**, rule 1).
 - Until the person has pushed the branch (or explicitly says it's fine to lose), your
@@ -154,7 +154,7 @@ available** above.
 
 ## Related
 
-- Who decides what gets pushed to the GitHub remote, and when: `lead`'s and `pm`'s own
+- Who decides what gets pushed to the GitHub remote, and when: `coordinator`'s own
   "before you publish" rule (this pack's templates).
 - Who may delete an agent, and what must be true first, including the unpushed-work
   anti-pattern this skill builds on: `scion-agent-manage` → **Agent Lifecycle** (Scion's
